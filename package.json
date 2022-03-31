@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/FeifanW/node.js-practice/issues"
   },
-  "homepage": "https://github.com/FeifanW/node.js-practice#readme"
+  "homepage": "https://github.com/FeifanW/node.js-practice#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

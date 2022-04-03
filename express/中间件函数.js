@@ -11,14 +11,25 @@ const mw = function(req, res, next){
 }
 
 // 将mw注册为全局生效的中间件
-app.use(mw)
+// app.use(mw)
 
-app.use((req, res, next)=>{
-  console.log("调用了第二个中间件");
+// app.use((req, res, next)=>{
+  //   console.log("调用了第二个中间件");
+  //   next()
+  // })
+  
+
+// 新建一个中间件函数
+const test = function(req, res, next){
+  console.log('这是第三个中间件函数');
   next()
-})
+}
 
-app.get('/',(req, res) => {
+// app.get('/',mw,test,(req, res) => {
+//   res.send('Get请求接受到了' + req.startTime)
+// })
+
+app.get('/',[mw,test],(req, res) => {
   res.send('Get请求接受到了' + req.startTime)
 })
 
